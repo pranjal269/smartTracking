@@ -12,7 +12,7 @@ namespace SmartTracking.Api.Controllers
         // Mock data store
         private static readonly List<Parcel> _parcels = new List<Parcel>();
 
-        [HttpPost]
+        [HttpPost("create")]
         public IActionResult CreateParcel([FromBody] CreateParcelRequest request)
         {
             if (!ModelState.IsValid)

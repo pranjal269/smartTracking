@@ -103,3 +103,4 @@
 /Users/pranjalagarwal/Desktop/csharp-smart-tracking/SmartTracking/src/SmartTracking.Api/obj/Debug/net8.0/SmartTracking.Api.pdb
 /Users/pranjalagarwal/Desktop/csharp-smart-tracking/SmartTracking/src/SmartTracking.Api/obj/Debug/net8.0/SmartTracking.Api.genruntimeconfig.cache
 /Users/pranjalagarwal/Desktop/csharp-smart-tracking/SmartTracking/src/SmartTracking.Api/obj/Debug/net8.0/ref/SmartTracking.Api.dll
+/Users/pranjalagarwal/Desktop/csharp-smart-tracking/SmartTracking/src/SmartTracking.Api/obj/Debug/net8.0/SmartTracking.Api.sourcelink.json
