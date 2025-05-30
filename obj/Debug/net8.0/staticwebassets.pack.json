@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/pranjalagarwal/Desktop/csharp-smart-tracking/SmartTracking/src/SmartTracking.Api/wwwroot/dashboard.css",
+      "PackagePath": "staticwebassets/dashboard.css"
+    },
+    {
+      "Id": "/Users/pranjalagarwal/Desktop/csharp-smart-tracking/SmartTracking/src/SmartTracking.Api/wwwroot/dashboard.js",
+      "PackagePath": "staticwebassets/dashboard.js"
+    },
+    {
+      "Id": "/Users/pranjalagarwal/Desktop/csharp-smart-tracking/SmartTracking/src/SmartTracking.Api/wwwroot/fix-login.js",
+      "PackagePath": "staticwebassets/fix-login.js"
+    },
+    {
+      "Id": "/Users/pranjalagarwal/Desktop/csharp-smart-tracking/SmartTracking/src/SmartTracking.Api/wwwroot/handler-dashboard.css",
+      "PackagePath": "staticwebassets/handler-dashboard.css"
+    },
+    {
+      "Id": "/Users/pranjalagarwal/Desktop/csharp-smart-tracking/SmartTracking/src/SmartTracking.Api/wwwroot/handler-dashboard.html",
+      "PackagePath": "staticwebassets/handler-dashboard.html"
+    },
+    {
+      "Id": "/Users/pranjalagarwal/Desktop/csharp-smart-tracking/SmartTracking/src/SmartTracking.Api/wwwroot/handler-dashboard.js",
+      "PackagePath": "staticwebassets/handler-dashboard.js"
+    },
+    {
+      "Id": "/Users/pranjalagarwal/Desktop/csharp-smart-tracking/SmartTracking/src/SmartTracking.Api/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/Users/pranjalagarwal/Desktop/csharp-smart-tracking/SmartTracking/src/SmartTracking.Api/wwwroot/script.js",
+      "PackagePath": "staticwebassets/script.js"
+    },
+    {
+      "Id": "/Users/pranjalagarwal/Desktop/csharp-smart-tracking/SmartTracking/src/SmartTracking.Api/wwwroot/sender-dashboard.html",
+      "PackagePath": "staticwebassets/sender-dashboard.html"
+    },
+    {
+      "Id": "/Users/pranjalagarwal/Desktop/csharp-smart-tracking/SmartTracking/src/SmartTracking.Api/wwwroot/styles.css",
+      "PackagePath": "staticwebassets/styles.css"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.SmartTracking.Api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.SmartTracking.Api.props",
+      "PackagePath": "build\\SmartTracking.Api.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.SmartTracking.Api.props",
+      "PackagePath": "buildMultiTargeting\\SmartTracking.Api.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.SmartTracking.Api.props",
+      "PackagePath": "buildTransitive\\SmartTracking.Api.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

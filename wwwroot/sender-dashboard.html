@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sender Dashboard | SmartTracking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="user-info">
+                <span id="userName">Loading...</span>
+                <button id="logoutBtn" class="btn-logout">Logout</button>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active" data-section="my-parcels">My Parcels</li>
+                    <li data-section="create-parcel">Create Parcel</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div id="alert" class="alert"></div>
+
+            <!-- My Parcels Section -->
+            <section id="my-parcels" class="content-section active">
+                <h2>My Parcels</h2>
+                <div class="card">
+                    <div id="parcelsList" class="parcels-list">
+                        <div class="loading">Loading your parcels...</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Create Parcel Section -->
+            <section id="create-parcel" class="content-section">
+                <h2>Create a New Parcel</h2>
+                <div class="card">
+                    <div id="createParcelFormErrors" class="form-error-summary"></div>
+                    <form id="createParcelForm" novalidate>
+                        <div class="form-group">
+                            <label for="recipientName">Recipient Name *</label>
+                            <input type="text" id="recipientName" required>
+                            <div class="validation-message" id="recipientNameError">Please enter recipient name</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipientAddress">Recipient Address *</label>
+                            <input type="text" id="recipientAddress" required>
+                            <div class="validation-message" id="recipientAddressError">Please enter recipient address</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="weight">Weight (kg) *</label>
+                            <input type="number" id="weight" step="0.1" min="0.1" required>
+                            <div class="validation-message" id="weightError">Please enter valid weight</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="specialInstructions">Special Instructions (Optional)</label>
+                            <textarea id="specialInstructions" rows="2"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Create Parcel</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for Parcel Details -->
+    <div id="parcelModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Load dashboard.js with error handling -->
+    <script>
+        // Add error handler for script loading
+        window.addEventListener('error', function(e) {
+            console.error('Script error detected:', e.message);
+            if (e.filename && e.filename.includes('dashboard.js')) {
+                alert('Error loading dashboard script: ' + e.message);
+            }
+        });
+
+        // Add a pre-initialization function to validate key requirements
+        function preinitCheck() {
+            console.log('Running pre-initialization check...');
+            
+            // Check if localStorage is available
+            try {
+                localStorage.setItem('test', 'test');
+                localStorage.removeItem('test');
+                console.log('localStorage is working properly');
+            } catch (error) {
+                console.error('localStorage is not available:', error);
+                document.body.innerHTML = '<div style="color:red;padding:20px;">Error: localStorage is not available. Please enable cookies and try again.</div>';
+                return false;
+            }
+            
+            // Check if user data exists
+            const userData = localStorage.getItem('user');
+            if (!userData) {
+                console.warn('No user data found in localStorage');
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 100);
+                return false;
+            }
+            
+            // Validate user data format
+            try {
+                const user = JSON.parse(userData);
+                if (!user || !user.role) {
+                    console.error('Invalid user data format:', user);
+                    localStorage.removeItem('user');
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 100);
+                    return false;
+                }
+                console.log('User data validated successfully');
+                return true;
+            } catch (error) {
+                console.error('Error parsing user data:', error);
+                localStorage.removeItem('user');
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 100);
+                return false;
+            }
+        }
+        
+        // Only load dashboard.js if pre-initialization check passes
+        if (preinitCheck()) {
+            const script = document.createElement('script');
+            script.src = 'dashboard.js';
+            script.onerror = function() {
+                console.error('Failed to load dashboard.js');
+                alert('Failed to load dashboard script. Please try refreshing the page.');
+            };
+            document.body.appendChild(script);
+        }
+    </script>
+</body>
+</html>

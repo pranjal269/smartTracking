@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Tracking - Login/Signup</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Any additional custom styles can go here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+
+                <!-- Alert Message -->
+    <div id="alert" class="alert hidden" role="alert" aria-live="polite">
+        <span id="alertMessage"></span>
+        <button id="dismissAlert" class="dismiss-alert" aria-label="Dismiss alert">&times;</button>
+    </div>
+            <!-- Login Form -->
+            <div class="form-section" id="loginSection">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                </form>
+                <p class="switch-text">Don't have an account? <a href="#" id="showSignup">Sign up</a></p>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="form-section hidden" id="signupSection">
+                <h2>Sign Up</h2>
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Email</label>
+                        <input type="email" id="signupEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupRole">Role</label>
+                        <select id="signupRole" required class="form-select">
+                            <option value="">Select a role</option>
+                            <option value="Handler">Handler</option>
+                            <option value="Sender">Sender</option>
+                            <option value="Admin">Admin</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">Sign Up</button>
+                </form>
+                <p class="switch-text">Already have an account? <a href="#" id="showLogin">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+</body>
+</html> 
